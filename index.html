@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skirk Combo Trainer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Combo presets">
+        <p class="eyebrow">Combos</p>
+        <h1>Skirk Combo Trainer</h1>
+        <div id="comboList" class="combo-list"></div>
+      </aside>
+
+      <main>
+        <section class="hero panel">
+          <div>
+            <p class="eyebrow">Multiple combo presets</p>
+            <h2 id="comboTitle">Standard N2D</h2>
+            <p id="comboSummary" class="summary"></p>
+          </div>
+          <div class="dps-card">
+            <span>Theoretical DPS</span>
+            <strong id="theoreticalDps">118%</strong>
+            <small id="dpsRange">115-120%</small>
+          </div>
+        </section>
+
+        <section class="grid two-col">
+          <article class="panel">
+            <div class="section-heading">
+              <p class="eyebrow">Pattern</p>
+              <div id="difficultyStars" class="stars" aria-label="Difficulty"></div>
+            </div>
+            <pre id="patternBlock"></pre>
+            <h3>Advantages</h3>
+            <ul id="advantagesList"></ul>
+            <h3>Estimated DPS gain</h3>
+            <table>
+              <thead><tr><th>Compared To</th><th>Gain</th></tr></thead>
+              <tbody id="gainRows"></tbody>
+            </table>
+          </article>
+
+          <article class="panel trainer-panel">
+            <div class="section-heading">
+              <p class="eyebrow">Mouse trainer</p>
+              <button id="resetTrainer" class="ghost">Reset</button>
+            </div>
+            <div class="mode-tabs" role="tablist" aria-label="Training modes">
+              <button class="active" data-mode="learn">Learn</button>
+              <button data-mode="practice">Practice</button>
+              <button data-mode="rhythm">Rhythm</button>
+              <button data-mode="simulator">DPS Simulator</button>
+            </div>
+            <div id="trainerContent"></div>
+            <div class="mouse-map">
+              <span><b>Attack</b> Left Click</span>
+              <span><b>Dash</b> Right Click</span>
+              <span><b>Walk Cancel</b> Mouse Wheel Click</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <p class="eyebrow">Comparison table</p>
+            <span class="note">Effective DPS = theoretical DPS × accuracy</span>
+          </div>
+          <table class="comparison-table">
+            <thead><tr><th>Combo</th><th>Difficulty</th><th>Estimated DPS</th><th>Consistency target</th></tr></thead>
+            <tbody id="comparisonRows"></tbody>
+          </table>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <p class="eyebrow">YouTube video guides</p>
+            <span class="note">One guide/search shortcut per preset</span>
+          </div>
+          <div id="videoGuides" class="video-grid"></div>
+        </section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
